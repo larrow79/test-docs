@@ -1,5 +1,6 @@
 ----
 # 基础（Basic）
+
 ## 创建应用（App）
 ```javascript
 // 创建APP，默认将使用div3d的标签作为3d渲染区域
