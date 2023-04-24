@@ -1,17 +1,9 @@
-[TOC]
-
 ----
 # 基础（Basic）
 ## 创建应用（App）
 ```javascript
 // 创建APP，默认将使用div3d的标签作为3d渲染区域
 const app = new THING.App();
-```
-```javascript
-// 创建APP，如果需要可以手动指定div
-const app = new THING.App({
-	container: document.getElementById('div3d')
-});
 ```
 
 ```javascript
