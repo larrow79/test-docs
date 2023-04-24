@@ -12,26 +12,26 @@ const app = new THING.App();
 const url = "./scenes/uino.gltf";
 // 创建app
 const app = new THING.App({
-	url,
-	onComplete: (ev) => {
-		console.log(ev.object);
-	}
+  url,
+  onComplete: (ev) => {
+    console.log(ev.object);
+  }
 });
 ```
 
 ```javascript
 // 创建app，回调
 const app = new THING.App({
-	url,
-	onComplete: (ev) => {
-		console.log(ev.object);
-	},
-	onProgress: (num) => {
-		console.log(num);
-	},
-	onError: (ev) => {
-		console.log(ev);
-	}
+  url,
+  onComplete: (ev) => {
+    console.log(ev.object);
+  },
+  onProgress: (num) => {
+    console.log(num);
+  },
+  onError: (ev) => {
+    console.log(ev);
+  }
 });
 ```
 
