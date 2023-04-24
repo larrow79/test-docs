@@ -1,5 +1,5 @@
 ----
-# 基础（Basic）
+# 基础应用（Basic）
 
 ## 创建应用（App）
 ```javascript
