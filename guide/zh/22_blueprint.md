@@ -21,11 +21,8 @@
 
 如果需要在`ThingJS`项目中加载蓝图，可以使用`app.load()`方法。加载后得到一个蓝图对象`blueprint`，调用`run()`来运行。
 ```javascript
-// 加载蓝图
-let blueprint = await app.load("/blueprints/bp01.json",{type: "blueprint"});
-
-// 运行蓝图
-blueprint.run();
+let bundle = await app.load("/blueprints/bp01.json");
+let blueprint = bundle.blueprints[0];
 ```
 
 可以对蓝图进行变量的设置，或触发蓝图中的事件

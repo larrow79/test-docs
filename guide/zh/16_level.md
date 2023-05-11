@@ -44,10 +44,10 @@ app.level.change(obj, params);
 层级的其他一些接口和属性：
 ```javascript
 // 后退层级
-app.level.back();
+await app.level.back();
 
 // 退出层级
-app.level.quit();
+await app.level.quit();
 
 // 当前层级对象
 app.level.current;

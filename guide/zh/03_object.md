@@ -31,7 +31,7 @@ let obj = new THING.Entity({
 });
 ```
 
-`await`、then的方法等待`Entity`加载完成：
+`await`、`then`的方法等待`Entity`加载完成：
 ```javascript
 // 创建物体，await等待完成
 let obj = new THING.Entity({url});

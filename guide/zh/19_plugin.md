@@ -49,7 +49,7 @@ class MyPlugin extends THING.BasePlugin {
 }
 ```
 
-可以通过`app.install()`来直接安装插件：
+<!-- 可以通过`app.install()`来直接安装插件：
 ```javascript
 // 安装插件
 app.install(new MyPlugin({ speed: 10 }), "myPlugin");
@@ -58,25 +58,20 @@ const plugin = app.plugins['myPlugin'];
 // 卸载插件
 app.uninstall("myPlugin");
 ```
-但常见的加载插件的方式是直接加载插件包，详见下面的文档。
+更常见的加载插件的方式是直接加载插件包，详见下面的文档。 -->
 
 ## 开发插件
 可通过CLI创建一个插件包：
 
 ## 加载插件
-引擎通过`app.load()`方法来加载插件：
+引擎通过`app.loadPlugin()`方法来加载插件：
 ```javascript
-let url = "./plugins/myPlugin"; // ？
+let url = "./plugins/my-plugin/index.js";
 let params = {};
 
 // await 的方式，等待加载完成
-let bundle = await app.load(url, params);
-bundle.plugin.sayHello();
-
-// 或 then 的方式，等待加载完成后回调
-app.load(url, params).then((ev) => {
-    ev.plugin.sayHello();
-})；
+let plugin = await app.loadPlugin(url, params); // ？
+plugin.sayHello();
 ```
 
 ## 导出成员
@@ -167,9 +162,8 @@ export { Cabinet, Car, Person }
 
 加载插件后，使用插件中的类型：
 ```javascript
-// await 的方式，等待加载完成
-let bundle = await app.load(url, params);
-let cabinet = bundle.Cabinet();
+let plugin = await app.loadPlugin(url, params);
+let cabinet = new plugin.exports.Cabinet();
 cabinet.createRacks();
 ```
 

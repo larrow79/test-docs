@@ -22,7 +22,7 @@ const app = new THING.App({
 ```
 
 ## Hello World
-在初始化`App`时，可以传入一个`url`参数，`url`可以是一个 <a href="https://www.khronos.org/gltf/">gltf</a> 格式的文件，或一个<a href="">资源包</a> 的路径，这样就可以加载一个场景：
+在初始化`App`时，可以传入一个`url`参数，`url`可以是一个包含了场景信息的 <a href="https://www.khronos.org/gltf/">gltf</a> 文件，或一个<a href="">场景格式</a> 的`JSON`文件，这样就可以加载一个场景：
 ```javascript
 // 创建APP，场景url
 const app = new THING.App({
