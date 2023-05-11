@@ -1,0 +1,237 @@
+{
+  // headers
+  "name": "场景01",
+  "id": "001",
+  "version": "2.0",
+  "author": "uino",
+  "description": "ThingJS Scene Format (TSF)",
+  // 标签
+  "tags": [
+    "BuildingStructure",
+    "Placement",
+    "Receiver"
+  ],
+  // 资源路径（相对路径）
+  "URIs": [
+    "wifi.gltf",
+    "scenes/uino.gltf",
+    "81FDB96B43D441C5B3C650BFA2B76CD4.jpg"
+  ],
+  // 对象
+  "objects": [
+    {
+      "uuid": "9c0e84e81dd84fb3b8ddb3d3fe83b97f",
+      "name": "building01",
+      "type": "Building",
+      "tags": [
+        0
+      ],
+      "uri": 0,
+      "size": [
+        1.399,
+        2.292,
+        3.439
+      ],
+      "style": 0,
+      "components": [
+        {
+          "type": "MyComp",
+          "name": "mine",
+          "params": {
+            "speed": 100
+          }
+        },
+        {
+          "type": "YourComp",
+          "name": "you"
+        }
+      ],
+      "userData": {
+        "owner": "uino"
+      },
+      "extras": {
+        "info": "Info of this building"
+      },
+      "parent": {
+        "uuid": "9c0e84e81dd84fb3b8ddb3d3fe83b97f"
+      },
+      "children": [
+        3,
+        5
+      ],
+      "position": [
+        1.958,
+        0.01,
+        19.118
+      ],
+      "rotation": [
+        0,
+        0.45265046,
+        0,
+        0.89168804
+      ],
+      "scale": [
+        0.54,
+        0.54,
+        0.54
+      ]
+    }
+  ],
+  // 对象关系
+  "relationships": [
+    {
+      "uuid": "9c0e84e81dd84fb3b8ddb3d3fe83b97f",
+      "name": "relationship1",
+      "type": "connect",
+      "source": [
+        6,
+        7
+      ],
+      "target": 5
+    },
+    {
+      "uuid": "9c0e84e81dd84fb3b8ddb3d3fe83b97f",
+      "type": "connect",
+      "source": {
+        "uuid": "38c8117f373c4122b1e20ac23ee8c971"
+      },
+      "target": [
+        {
+          "uuid": "38c8117f373c4122b1e20ac23ee8c971"
+        }
+      ],
+      "direction": "InOut",
+      "userData": {
+        "signal": 20
+      }
+    }
+  ],
+  // 渲染设置
+  "rendersettings": {
+    // 背景或天空盒
+    "background": {},
+    // 环境图
+    "environment": {},
+    // 环境光强度
+    "envMapLight": {},
+    // 灯光参数
+    "lights": {},
+    // 后期参数设置
+    "postEffects": {},
+    "effects": {}
+  },
+  // 效果
+  "styles": [
+    {
+      "image": 6,
+      "repeatUV": [
+        1,
+        1
+      ]
+    },
+    {
+      "enable": true,
+      "color": {},
+      "transparent": true
+    }
+  ],
+  // 蓝图
+  "blueprints": [
+    {
+      "name": "bp01",
+      "nodes": [
+        {
+          "name": "Begin",
+          // 空对象都可以删除
+          "data": {},
+          "inputs": {},
+          "outputs": {
+            "start": {}
+          }
+        },
+        {
+          "name": "Print",
+          "data": {
+            "type": "debug"
+          },
+          "inputs": {
+            "exec": {},
+            "value": "蓝图页打印1"
+          },
+          "outputs": {
+            "next": {}
+          }
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": 0,
+            "output": "start"
+          },
+          "to": {
+            "node": 1,
+            "input": "exec"
+          }
+        }
+      ]
+    }
+  ],
+  // 动作
+  "actions": [{
+    "type": "CameraFlyto", // 摄影机飞行
+    "params": {
+        "duration": 2000		// 飞行时间2秒
+      }
+    }, {
+      "type": "CreateObject", // 创建对象
+      "params": {
+          "type": "Box",
+          "name": "obj01"
+      },
+      "endDelay": 2000
+  }],
+  // 选择集
+  "selections": [
+    {
+      "condition": ".Building",
+      "style": 0
+    },
+    {
+      "objects": [
+        0,
+        1,
+        2
+      ],
+      "visible": false
+    }
+  ],
+  // 插件
+  "plugins": [
+    "./plugA.js",
+    "./plugB.js"
+  ],
+  // 脚本
+  "scripts": [
+    "./comp1.js",
+    "./comp2.js",
+    "./bpnode1.js",
+    "./bpnode2.js",
+    "./test.js"
+  ],
+  // 引用文件
+  "files": [
+    "./main.json",
+    "./other.json"
+  ],
+  // 依赖
+  "dependencies": {},
+  // 预下载的文件
+  "preDownloads": [
+    "./models/x.json",
+    "./models/y.json",
+    "./models/z.json"
+  ],
+  // 扩展
+  "extensions": {}
+}
