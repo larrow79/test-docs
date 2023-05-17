@@ -15,6 +15,8 @@
   "name": "scene01",
   "id": "972c819-ee02-11ed-bfbe-c0b5d78a0456",
   "version": "2.0",
+  "description": "ThingJS Scene Format",
+  "author": "uino",
   // 对象
   "objects": [],
   // 关系
@@ -34,16 +36,14 @@
   // 脚本
   "scripts": [],
   // 扩展
-  "extensions": {}  
+  "extensions": {},
+  // 预先下载文件
+  "preDownloads": []
 }
 ```
-其他还有一些可选字段，如：
-* `author` 资源包作者
-* `description` 资源包描述
-* `dependencies` 资源包依赖
-* `preDownloads` 用于预先下载的文件列表
-
 一个场景文件可以存储上述的全部字段内容，也可以只存储其中的部分字段。只存储部分字段的文件，一般用于描述某类数据，比如：只存储效果相关的字段，当加载这个文件仅用于生效某个效果主题。
+
+兼容字段：为了和1.0版本的文件兼容，支持`type`字段，代表本文件的类型，以及`main`字段，作为单一文件的入口，即使用`main`时候，`files`不在生效。
 
 ## 加载和导出
 

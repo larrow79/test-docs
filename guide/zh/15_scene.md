@@ -34,7 +34,7 @@ app.load(url, {
     // 加载到这个对象下
     parent: parentObj,  // ？参数名是这个
     // 忽略效果
-    ignore: "theme",
+    ignore: "rendersettings",
 });
 ```
 
@@ -72,7 +72,7 @@ app.on('load', '.Campus', function(ev) {
     console.log(ev);
 });
 ```
-
+<!-- 
 ## 导出场景
 ```javascript
 let exporter = new SceneExporter();
@@ -80,5 +80,5 @@ exporter.save("objects", root);
 exporter.save("relationship"...);
 
 exporter.save("rendersettings"...);
-```
+``` -->
 
