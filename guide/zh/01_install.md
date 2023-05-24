@@ -60,6 +60,6 @@ import { App, Component } from '@thing.js/core';
 ```bash
 > thing create project-name
 ```
-![CLI使用示例](../../images/cli.gif)
+![CLI使用示例](./images/cli.gif)
 
 
