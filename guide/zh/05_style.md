@@ -69,7 +69,7 @@ obj.inherit.style = false;
 obj.style.color = '#ff0000'; // 修改颜色
 obj.style.opacity = 0.5; // 修改透明度
 // obj.style.image = 'images/some.png'; // 修改图片
-obj.style.image = new ImageTexture('images/some.png');
+obj.style.image = new THING.ImageTexture('images/some.png');
 obj.style = {
     "color": "#FF0000",
     "outlineColor": "#0000FF"

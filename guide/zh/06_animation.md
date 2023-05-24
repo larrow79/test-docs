@@ -26,7 +26,11 @@ obj.playAnimation({
 
 停止动画播放
 ```javascript
-obj.stopAnimation();
+// 停止某个动画
+obj.stopAnimation(animName);
+
+// 停止所有动画
+obj.stopAllAnimations();
 ```
 
 可以通过`animations`属性来获取动画信息：

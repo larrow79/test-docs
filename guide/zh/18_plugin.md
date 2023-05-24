@@ -56,7 +56,7 @@ class MyPlugin extends THING.BasePlugin {
 ## 加载插件
 引擎通过`app.loadPlugin()`方法来加载插件：
 ```javascript
-let url = "./plugins/my-plugin/index.js";
+let url = "./plugins/plug01/index.js";
 let params = {};
 
 // await 的方式，等待加载完成

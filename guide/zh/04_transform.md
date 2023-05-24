@@ -122,7 +122,7 @@ let selfPos = obj.worldToSelf(pos2);
 obj.pivot = [0.5, 0.5, 0.5];
 
 // 绘制物体的轴心点
-obj.helper.axies = true;
+obj.helper.axes = true;
 ```
 
 ## 包围盒

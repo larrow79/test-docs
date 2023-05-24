@@ -42,7 +42,7 @@ app.camera.flyTo({
 可通过摄影机的`setProjectionType`来设置两种模式，枚举`ProjectionType`包含两种模式，`duration`参数可以控制切换模式的过渡时间：
 ```javascript
 // 设置为正交投影（切换时间2秒）, .Perspective为透视投影
-app.camera.setProjectionType(THING.ProjectionType.Orthographic 2000);
+app.camera.setProjectionType(THING.ProjectionType.Orthographic, 2000);
 ```
 
 摄影机还提供了几种视图的切换（正、顶、侧视图），一般可以配合正交模式，枚举`ViewModeType`中，提供多种视图模式：
@@ -52,19 +52,17 @@ app.camera.viewMode = THING.ViewModeType.Top;
 ```
 
 ## 控制
-摄影机对象通过其挂接的控制组件，来进行控制，可以通过`camera.control`来访问，比如：
+摄影机对象通过其挂接的控制组件，来进行控制，可以通过`camera`的属性来访问，比如：
 ```javascript
-camera.control.enable = true; // 打开/关闭控制操作
-camera.control.enableRotate = true; // 打开/关闭旋转
-camera.control.enablePan = true; // 打开/关闭平移
-camera.control.enableZoom = true; // 打开/关闭缩放
-camera.control.rotateSpeed = 1; // 获取/设置旋转速度
-camera.control.panSpeed = 1; // 获取/设置平移速度
-camera.control.zoomSpeed = 1; // 获取/设置缩放速度
+camera.enable = true; // 打开/关闭控制操作
+camera.enableRotate = true; // 打开/关闭旋转
+camera.enablePan = true; // 打开/关闭平移
+camera.enableZoom = true; // 打开/关闭缩放
+camera.rotateSpeed = 1; // 获取/设置旋转速度
+camera.panSpeed = 1; // 获取/设置平移速度
+camera.zoomSpeed = 1; // 获取/设置缩放速度
 ```
-更多控制可以参考API手册。
-
-可以通过重写这个摄影机组件，来实现一个你自己的摄影机控制方式。
+可以通过重写摄影机控制组件，来实现一个你自己的摄影机控制方式。更多控制可以参考API手册。
 
 ## 其他参数
 摄影机还提供了`near`近裁剪面距离，`far`远裁剪面距离，视场角`fov`，视口宽高比`aspect`等属性的设置：

@@ -23,6 +23,9 @@ obj.uuid = "5811f0ecf97811ed9a4fc0b5d78a0456";
 ```
 
 对象类型存储在`type`属性中，内部类型如`Entity`、`Object3D`，或扩展类型如`Building`、`Room`，或自定义类型`Cabinet`等。
+```javascript
+console.log( obj.type );
+```
 
 对象标签`tags`，可以存储多个字符串作为对象的标签，可以根据标签来查询：
 ```javascript
@@ -36,6 +39,7 @@ obj.userData = {
     "编号": "M001"
     "重量": 100,
 }
+
 let dat = obj.userData["品牌"];
 ```
 
@@ -52,8 +56,8 @@ const url = "./models/car.gltf";
 // 创建物体，根据给定URL的资源物体，路径为模型或预制件
 let obj = new THING.Entity({
     url,
-    position: [2,0,0],
-    angle: 45,
+    position: [2, 0, 0],
+    angles: [0, 45, 0],
     onComplete: function() {
         // 加载资源完成的回调
         console.log("object created");

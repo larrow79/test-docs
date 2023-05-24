@@ -126,34 +126,3 @@ box.speed = 50; // 直接访问成员
 box.setColor(THING.Math.randomColor()); // 直接调用方法
 ```
 
-## 内置组件
-引擎提供了一些内置组件，如：操作轴组件
-```javascript
-obj.addComponent(THING.TransformControlComponent, 'dragAxis');
-obj.dragAxis.mode = 'translate';
-```
-
-绕物体旋转组件：
-```javascript
-obj.addComponent(THING.RotateAroundComponent, 'rotateController');
-obj.rotateController.start({
-	target: app.query('.car01')[0],
-	onComplete: (ev) => {
-		console.log('Rotate finished');
-	}
-});
-```
-
-拖拽功能组件：
-```javascript
-obj.addComponent(THING.DragComponent, 'drag');
-obj.drag.enable = true;
-```
-
-摄像机自动跟随目标组件：
-```javascript
-camera.addComponent(THING.FollowerComponent, 'follower');
-camera.follower.start(obj.query('.car01')[0]);
-```
-
-
