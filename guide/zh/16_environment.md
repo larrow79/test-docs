@@ -26,7 +26,7 @@ const cubeMap = new THING.CubeTexture([
 app.background = cubeMap;
 ```
 
-更简单的方法是直接指定一个路径，但需要路径里面包含和上面文件名相同的6个图片文件，引擎内部会自动按上面的文件名去加载这些图片：
+更简单的方法是直接指定一个路径，但需要确保路径里面包含和上面文件名相同的6个图片文件，引擎内部会自动按上面的文件名去加载这些图片：
 ```javascript
 app.background = baseURL;
 ```
@@ -92,7 +92,7 @@ app.scene.envMapLightIntensity = 0;
 
 ## 后处理
 
-后处理`Post-Processing`是指在渲染之后，对最终渲染的结果进行后期加工的过程，用于实现各种特殊效果。
+后处理`Post-Processing`是指在渲染之后，对最终渲染的结果进行后期加工的过程，用于实现各种特殊效果。可以通过`camera.postEffect`来设置后处理效果：
 
 ```javascript
 // 获取当前的后期参数

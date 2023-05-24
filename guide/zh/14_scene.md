@@ -9,12 +9,12 @@
 
 可以通过`app.load()`的方法来加载场景：
 ```javascript
-// 资源路径
+// 文件路径
 const url = "./scenes/simple.json";
 
 // await 的方式，等待加载完成
-let bundle = await app.load(url);
-console.log( bundle.root );
+let asset = await app.load(url);
+console.log( asset.root );
 
 // 或 then 的方式，等待加载完成后回调
 app.load(url).then((ev) => {
@@ -22,26 +22,24 @@ app.load(url).then((ev) => {
 })；
 ```
 
-也可以传入包含场景对象信息的`gltf`文件：
-```javascript
-await app.load("./scenes/uino.gltf");
-```
-
 在`app.load()`方法中，除了`url`必选参数外，还可以设置更多的参数，如：指定加载到哪个根对象`parent`、加载时是否忽略某些内容`ignore`等等。
 
 ```javascript
 app.load(url, {
     // 加载到这个对象下
-    parent: parentObj,  // ？参数名是这个
+    parent: parentObj,
     // 忽略效果
     ignore: "rendersettings",
 });
 ```
 
-## 加载事件
-除了在`then`方法外，也可以在参数`onComplete`中进行指定加载完成的回调。
+也可以通过`loadGLTF`来加载包含场景信息的`gltf`文件：
+```javascript
+await app.loadGLTF("./scenes/uino.gltf");
+```
 
-加载进度`onProgress`、加载错误`onError`的回调方法等，也可以在参数中进行指定。
+## 加载事件
+除了在`then`方法外，也可以在参数`onComplete`中进行指定加载完成的回调。加载进度`onProgress`、加载错误`onError`的回调方法等，也可以在参数中进行指定。
 
 ```javascript
 app.load(url, {
@@ -60,7 +58,7 @@ app.load(url, {
 });
 ```
 
-在代码的其他地方，也可以通过注册`app`的`load`事件，来响应场景加载完成的事件：
+也可以通过注册`app`的`load`事件，在代码的其他地方来响应场景加载完成的事件：
 ```javascript
 // 场景加载完成事件
 app.on('load', function(ev) {
@@ -72,13 +70,4 @@ app.on('load', '.Campus', function(ev) {
     console.log(ev);
 });
 ```
-<!-- 
-## 导出场景
-```javascript
-let exporter = new SceneExporter();
-exporter.save("objects", root);
-exporter.save("relationship"...);
-
-exporter.save("rendersettings"...);
-``` -->
 

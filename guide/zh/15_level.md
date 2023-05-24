@@ -1,7 +1,7 @@
 # 层级
 <!-- level -->
 
-`ThingJS`引擎中的层级是指当前场景所处的空间位置，如：园区层级、建筑层级、房间层级、设备层级等。层级相当于一个用来展示和控制对象的舞台，你可以为一类或一个对象设置特定的展示和控制方式。这样当进入这个层级后，就可以使用这种特定的方式，来显示和控制这个层级的对象了。
+`ThingJS`引擎中的层级是指：当前场景所处的空间位置。如：园区层级、建筑层级、房间层级、设备层级等。层级相当于一个用来展示和控制对象的舞台，你可以为一类对象或一个对象设置特定的展示和控制方式，这样，当进入这个层级后，就可以使用这种特定的方式，来显示和控制这个层级的对象了。
 
 > 注意：层级是根据对象之间的父子关系逐级进入或退出的
 
@@ -15,19 +15,11 @@ app.level.change(obj);
 层级切换可能是异步的，如果需要等待层级切换完成，可以通过下面的异步方式等待：
 ```javascript
 // await 的方式，等待层级切换完成
-await app.level.change(obj); // ？
+await app.level.change(obj); 
 
 // 或 then 的方式，等待层级切换完成后回调
 app.level.change(obj).then((ev) => {
     console.log(ev);
-})
-```
-
-在场景加载完成后，经常会使用场景的根对象作为初始层级，比如：
-```javascript
-app.on('load', function(ev) {
-    if (ev.object)
-        app.level.change(ev.object);
 })
 ```
 
@@ -39,6 +31,14 @@ let params = {
     flyTime: 2000 // 切换层级后飞行时间
 }
 app.level.change(obj, params);
+```
+
+在场景加载完成后，可以使用加载场景的根对象作为初始层级，比如：
+```javascript
+app.on('load', function(ev) {
+    if (ev.object)
+        app.level.change(ev.object);
+})
 ```
 
 层级的其他一些接口和属性：
@@ -58,7 +58,7 @@ app.level.prev;
 
 ## 层级控制
 
-在切换到某个层级之后，需要实现一个层级的控制方式，用来展示和控制这个层级的对象。你可以通过继承`THING.BaseLevelControl`类，来实现这个控制方式，并注通过`app.level.register()`对其进行注册：
+在切换到某个层级之后，需要实现一个层级的控制方式，用来展示和控制这个层级的对象。你可以通过继承`BaseLevelControl`类，来实现这个控制方式，并注通过`app.level.register()`对其进行注册：
 
 ```javascript
 // 建筑层级控制

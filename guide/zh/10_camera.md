@@ -1,7 +1,7 @@
 # 摄影机
 <!-- camera -->
 
-在`ThingJS`引擎中，默认提供了摄影机`app.camera`对象和它的默认控制方式，摄影机就相当于手机上的摄像头，随着摄影机的位置`position`、拍摄点`target`，对三维场景进行取景，之后渲染到屏幕上。摄影机提供了设置视角、飞行、模式，以及控制方式等多种功能。
+在`ThingJS`引擎中，默认提供了摄影机对象`app.camera`，以及它的默认控制方式。摄影机就相当于手机上的摄像头，随着摄影机的位置`position`、拍摄点`target`的变化，对场景进行取景，之后渲染到屏幕上。摄影机提供了设置视角、飞行、模式，以及控制方式等多种功能。
 
 ## 视角
 通过摄影机的`position`、`target`属性，或这`lookat`方法来设置摄影机看点和角度：
@@ -32,20 +32,19 @@ app.camera.flyTo({
         console.log("fly complete");
     }
 });
-
-await app.camera.flyTo({
-    position: [2, 5, 6],
-    target: [0, 0, 0],
-    duration: 1000
-}); // ？
 ```
 
 ## 模式
-摄影机支持透视模式`Perspective`和正交模式`Orthographic`。默认使用透视模式，在透视模式下，物体随摄影机的距离近大远小，更接近真是世界；正交模式下，物体的大小和摄影机距离无关，其大小保持不变。可通过摄影机的`setProjectionType`来设置两种模式，枚举`ProjectionType`包含两种模式，`duration`参数可以控制切换模式的过渡时间：
+摄影机支持透视模式`Perspective`和正交模式`Orthographic`，默认使用透视模式。
+* 在透视模式下，物体随摄影机的距离近大远小，更接近真是世界；
+* 在正交模式下，物体的大小和摄影机距离无关，其大小保持不变；
+
+可通过摄影机的`setProjectionType`来设置两种模式，枚举`ProjectionType`包含两种模式，`duration`参数可以控制切换模式的过渡时间：
 ```javascript
 // 设置为正交投影（切换时间2秒）, .Perspective为透视投影
 app.camera.setProjectionType(THING.ProjectionType.Orthographic 2000);
 ```
+
 摄影机还提供了几种视图的切换（正、顶、侧视图），一般可以配合正交模式，枚举`ViewModeType`中，提供多种视图模式：
 ```javascript
 // 设置顶视图

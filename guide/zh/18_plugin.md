@@ -1,6 +1,6 @@
 # 插件
 <!-- plugin -->
-`ThingJS`引擎的插件`Plugin`是对系统功能的扩展。用户可以在插件中写自定义代码、使用组件、引用模型/图片等资源内容，对一个独立功能进行封装和复用。比如：给 `ThingJS` 增加物理系统、寻路系统等。每个插件在`app`中一般只注册一个。
+`ThingJS`引擎的插件`Plugin`是一种对系统功能的扩展方式。用户可以在插件中写自定义代码、使用组件、引用模型/图片等资源内容，实现对一个独立功能的封装和复用。比如：给 `ThingJS` 增加物理系统、寻路系统等。每个插件在`app`中一般只注册一个。
 
 ## 插件类
 开发一个插件，需要继承`BasePlugin`类，下面是一个插件类的例子：
@@ -49,19 +49,9 @@ class MyPlugin extends THING.BasePlugin {
 }
 ```
 
-<!-- 可以通过`app.install()`来直接安装插件：
-```javascript
-// 安装插件
-app.install(new MyPlugin({ speed: 10 }), "myPlugin");
-// 已经安装的插件
-const plugin = app.plugins['myPlugin'];
-// 卸载插件
-app.uninstall("myPlugin");
-```
-更常见的加载插件的方式是直接加载插件包，详见下面的文档。 -->
-
 ## 开发插件
-可通过CLI创建一个插件包：
+可通过CLI创建一个插件：
+*待补充……*
 
 ## 加载插件
 引擎通过`app.loadPlugin()`方法来加载插件：
@@ -70,7 +60,7 @@ let url = "./plugins/my-plugin/index.js";
 let params = {};
 
 // await 的方式，等待加载完成
-let plugin = await app.loadPlugin(url, params); // ？
+let plugin = await app.loadPlugin(url, params);
 plugin.sayHello();
 ```
 
@@ -125,7 +115,7 @@ class Navigation extends THING.BasePlugin {
   }
 }
 ```
-这样的话，属性speed和方法move就被暴露出去，暴露出去的数据可以通过插件的实例上的`plugin.props`获取到。
+这样的话，属性speed和方法move就被暴露出去，暴露出去的数据可以通过插件的实例上的`plugin.props`获取到。 // ？props的统一
 
 ## 导出类
 很多时候我们的业务需要自定义一些类（例如机柜类、车类、人类等），然后将这些类交给各个应用自己去实例。

@@ -1,7 +1,7 @@
 # 对象动画
 <!-- animation -->
 
-如果`Entity`资源包含动画，可以用`playAnimation`方法来播放动画：
+如果`Entity`的资源中包含动画，可以用`playAnimation`方法来播放动画：
 ```javascript
 obj = new THING.Entity({
     url: './models/spaceman.gltf'
@@ -36,9 +36,8 @@ let duration = anim.duration;
 let speed = anim.speed;
 let state = anim.state;
 ```
-
 > 注意：如果需要获取物体动画的信息，要在物体加载完成后才能获取
-> 
+
 ```javascript
 // 打印物体所包含动画的名称
 obj = new THING.Entity({

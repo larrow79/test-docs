@@ -1,7 +1,7 @@
 # 组件
 <!-- component -->
 
-`ThingJS`引擎的组件`Component`是对象功能的扩展，继承自`BaseObject`类的对象，都可以通过添加组件的方式进行扩展。组件包括 onStart、onUpdate 等生命周期方法，在组件内可以访问到常用的全局变量，并可以将当前组件的成员导出到对象身上。
+`ThingJS`引擎的组件`Component`是一种对象功能的扩展方式，所有继承自`BaseObject`类的对象，都可以通过添加组件的方式进行扩展。组件包括 `onStart`、`onUpdate` 等生命周期方法，在组件内可以访问到常用的全局变量，并可以将当前组件的成员导出到对象身上。
 
 ## 组件类
 开发一个组件，需要继承`Component`类，下面是一个组件类的例子：
@@ -37,6 +37,9 @@ obj.rotator.speed = 100;
 ## 生命周期
 
 在组件中，可以实现下列的生命周期方法的回调。
+
+![Component](./images/compnent.png "Component")
+
 
 其他生命周期方法如：`onLoad` 物体加载资源后的回调，`onAppQuit` 应用退出时候的回调等。
 
@@ -74,18 +77,18 @@ let comp = obj.components['rotator'];
 ```
 
 ## 禁用删除
-通过组件的`enable`属性可以禁用或启用组件，当组件被禁用后，会调用组件的`onDisable`，同时`onUpdate` 也不会再被调用，当启用组建后，会调用组件的`onEnable`方法。
+可以通过组件的`enable`属性可以禁用或启用组件，当组件被禁用后，会调用组件的`onDisable`，同时`onUpdate` 也不会再被调用，当启用组件后，会调用组件的`onEnable`方法。
 ```javascript
 obj.rotator.enable = false; // 禁用组件，调onDisable
 obj.rotator.enable = true;  // 启用组件，调onEnable
 ```
-通过 `removeComponent` 删除组件：
+可以通过 `removeComponent` 删除组件：
 ```javascript
 obj.removeComponent('rotator');
 ```
 
 ## 常用成员
-常用的成员，如`this.app`、`this.camera`等，其中 `this.object 为组件所挂接的物体：
+组件中的常用成员，如`this.app`、`this.camera`等，其中 `this.object 为组件所挂接的物体：
 ```javascript
 class MyComp extends THING.Component {
     onStart() {
@@ -124,13 +127,14 @@ box.setColor(THING.Math.randomColor()); // 直接调用方法
 ```
 
 ## 内置组件
-引擎提供了一些内置组件，如：
+引擎提供了一些内置组件，如：操作轴组件
 ```javascript
-// 操作轴组件
 obj.addComponent(THING.TransformControlComponent, 'dragAxis');
 obj.dragAxis.mode = 'translate';
+```
 
-// 绕物体旋转组件
+绕物体旋转组件：
+```javascript
 obj.addComponent(THING.RotateAroundComponent, 'rotateController');
 obj.rotateController.start({
 	target: app.query('.car01')[0],
@@ -138,12 +142,16 @@ obj.rotateController.start({
 		console.log('Rotate finished');
 	}
 });
+```
 
-// 拖拽功能组件
+拖拽功能组件：
+```javascript
 obj.addComponent(THING.DragComponent, 'drag');
 obj.drag.enable = true;
+```
 
-// 摄像机自动跟随目标组件
+摄像机自动跟随目标组件：
+```javascript
 camera.addComponent(THING.FollowerComponent, 'follower');
 camera.follower.start(obj.query('.car01')[0]);
 ```

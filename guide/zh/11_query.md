@@ -1,7 +1,7 @@
 # 查询
 <!-- query -->
 
-`ThingJS`引擎提供对象查询的接口`query`，可以通过`app.query()`进行全局对象查询，也可以通过`obj.query()`来对这个对象的孩子范围内，进行局部查询：
+`ThingJS`引擎通过`query`接口，来提供对象的查询功能，可以通过`app.query()`进行全局对象查询，也可以通过`obj.query()`来对这个对象的孩子范围内，进行局部查询：
 
 ## 全局查询
 
@@ -48,9 +48,9 @@ app.query('*');
 app.query('.Entity').query('[userData/品牌=IBM]');
 ```
 
-## 对象查询
+## 局部查询
 
-对象查询是指在某个对象孩子范围内的查询，通过`obj.query`接口实现，接口的方式类似`app.query`，下面举一些例子，其中假设`building`是一个建筑对象：
+局部查询是指在某个对象孩子范围内的查询，通过`obj.query`接口实现，接口的方式类似`app.query`，下面举一些例子，其中假设`building`是一个建筑对象：
 ```javascript
 // 子对象查询，查询自定义属性中包含“物体类型”的子对象
 obj.query('[userData/物体类型]');
@@ -111,6 +111,6 @@ app.query('.Entity').remove('car04');
 ```javascript
 // 自己创建选择器
 let sel = new Selector();
-sel.push(obj); // ？add和remove不是对应的么
+sel.push(obj);
 ```
 

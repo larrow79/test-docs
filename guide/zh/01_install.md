@@ -60,12 +60,6 @@ import { App, Component } from '@thing.js/core';
 ```bash
 > thing create project-name
 ```
-![CLI使用示例](https://cdn.uino.cn/thingjs-cli/images/cli-demo.gif)
-
-使用 `thing ui` 启动图形化向导，在页面上创建和管理项目。
-```bash
-> thing ui
-```
-![CLI-UI使用示例](https://cdn.uino.cn/thingjs-cli/images/cli-ui-demo.gif)
+![CLI使用示例](../../images/cli.gif)
 
 

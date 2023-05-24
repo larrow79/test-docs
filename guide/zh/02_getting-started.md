@@ -2,11 +2,11 @@
 <!-- getting-started -->
 
 ## 初始化
-使用`ThingJS`引擎，首先要创建一个`THING.App`实例，`App`是引擎中的主要入口，一般只需要创建一个，提供了资源加载、对象管理、对象查询、事件注册等等各种功能。
+使用`ThingJS`引擎，首先要创建一个`App`实例，`App`是引擎中的主要入口，一般只需要创建一个，提供了资源加载、对象管理、对象查询、事件注册等等各种功能。
 
 ```javascript
 // 创建APP
-new THING.App();
+const app = new THING.App();
 ```
 
 `ThingJS`默认使用页面上的`div3d`的标签作为3d渲染区域：
@@ -22,7 +22,7 @@ const app = new THING.App({
 ```
 
 ## Hello World
-在初始化`App`时，可以传入一个`url`参数，`url`可以是一个包含了场景信息的 <a href="https://www.khronos.org/gltf/">gltf</a> 文件，或一个<a href="">场景格式</a> 的`JSON`文件，这样就可以加载一个场景：
+在初始化`App`时，可以传入一个`url`参数，`url`可以是一个包含了场景信息的 <a href="https://www.khronos.org/gltf/">gltf</a> 文件，或一个`ThingJS`<a href="">场景格式</a> 的`JSON`文件，这样就可以加载一个场景：
 ```javascript
 // 创建APP，场景url
 const app = new THING.App({
@@ -34,7 +34,7 @@ const app = new THING.App({
 });
 ```
 
-在初始化`App`后，创建一个立方体盒子，并让这个`Box`旋转：
+在初始化`App`后，创建一个立方体盒子，并在更新事件中让这个`Box`旋转：
 ```javascript
 // 创建一个宽、高、深为1、2、3的盒子
 let box = new THING.Box(1, 2, 3);

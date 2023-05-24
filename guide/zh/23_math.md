@@ -38,3 +38,4 @@ THING.Math.randomFromObject(THING.ViewModeType);
 ```
 更多方法参见`THING.Math`的文档。
 
+

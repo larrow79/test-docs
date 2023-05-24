@@ -1,7 +1,7 @@
 # 参数化
 <!-- parametric -->
 
-参数化对象是根据输入的基本参数自动构建的三维对象，包括点、线、面、体。
+参数化对象，是根据输入参数自动构建的三维对象，如：点、线、面、体等。
 
 ## 点
 给定一批点坐标，生成一批点，可以通过`size`来控制点大小：
@@ -87,14 +87,14 @@ let box = new THING.Box({
 
 ```javascript
 // 更多几何体
-new THING.Sphere({ radius: 0.5, position: [12, 0, 0], style: { color: "#FF00FF" }});
+new THING.Sphere({radius: 0.5, position: [12, 0, 0], style: { color: "#FF00FF" }});
 new THING.Cylinder({radiusTop: 0, position: [0, 0, 0], style: { color: "#FFA300" }});
 new THING.Circle({position: [4, 0, 0], style: { color: "#0000FF" }});
 new THING.Capsule({position: [8, 0, 0], style: { color: "#00FFFF" }});
 new THING.Torus({position: [-4, 0, 0], style: { color: "#FFFF00" }});
 ```
 
-还可以通过`ExtrudeShape`，指定一个形状和高度，来挤出一个体造型：
+还可以通过`ExtrudeShape`，指定一个形状和高度，来挤出一个体积的造型：
 ```javascript
 // 创建高度为 2 米的挤出体
 const shape = new THING.ExtrudeShape({
@@ -109,7 +109,7 @@ const shape = new THING.ExtrudeShape({
 ```
 
 ## 粒子
-粒子系统`ParticleSystem`是一个三维对象，有多个粒子发射器组构成`ParticleEmitter`，粒子系统为场景提供各种特殊效果，如：烟气、喷淋、雨雪，或一些特殊效果：
+粒子系统`ParticleSystem`是一个三维对象，由多组粒子发射器`ParticleEmitter`组成，粒子系统为场景提供各种特殊效果，如：烟气、喷淋、雨雪，或一些特殊效果：
 ```javascript
 // 创建粒子
 let particleSystem = new THING.ParticleSystem({

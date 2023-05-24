@@ -1,30 +1,34 @@
 {
-  // headers
+  // 头信息
   "name": "场景01",
   "id": "001",
   "version": "2.0",
   "author": "uino",
   "description": "ThingJS Scene Format (TSF)",
+
   // 标签
   "tags": [
     "BuildingStructure",
     "Placement",
     "Receiver"
   ],
+
   // 资源路径（相对路径）
   "URIs": [
     "wifi.gltf",
     "scenes/uino.gltf",
     "81FDB96B43D441C5B3C650BFA2B76CD4.jpg"
   ],
+
   // 对象
   "objects": [
     {
       "uuid": "9c0e84e81dd84fb3b8ddb3d3fe83b97f",
-      "name": "building01",
-      "type": "Building",
+      "name": "car01",
+      "type": "Car",
       "tags": [
-        0
+        1, 
+        2
       ],
       "uri": 0,
       "size": [
@@ -50,7 +54,7 @@
         "owner": "uino"
       },
       "extras": {
-        "info": "Info of this building"
+        "speed": 100
       },
       "parent": {
         "uuid": "9c0e84e81dd84fb3b8ddb3d3fe83b97f"
@@ -77,6 +81,7 @@
       ]
     }
   ],
+
   // 对象关系
   "relationships": [
     {
@@ -106,6 +111,7 @@
       }
     }
   ],
+
   // 渲染设置
   "rendersettings": {
     // 背景或天空盒
@@ -120,6 +126,7 @@
     "postEffects": {},
     "effects": {}
   },
+
   // 效果
   "styles": [
     {
@@ -131,14 +138,16 @@
     },
     {
       "enable": true,
-      "color": {},
+      "color": [],
       "transparent": true
     }
   ],
+
   // 蓝图
   "blueprints": [
     {
       "name": "bp01",
+      "url": "./blueprints/bp01.json", // 如果有url说明是直接引用文件，则不需要nodes、connections等
       "nodes": [
         {
           "name": "Begin",
@@ -177,6 +186,7 @@
       ]
     }
   ],
+
   // 动作
   "actions": [{
     "type": "CameraFlyto", // 摄影机飞行
@@ -191,6 +201,7 @@
       },
       "endDelay": 2000
   }],
+
   // 选择集
   "selections": [
     {
@@ -206,32 +217,42 @@
       "visible": false
     }
   ],
+
   // 插件
-  "plugins": [
-    "./plugA.js",
-    "./plugB.js"
-  ],
+  "plugins": [{
+    "name": "a",
+    "url": "./plugA.js",
+    "params": ""
+  }],
+
   // 脚本
   "scripts": [
-    "./comp1.js",
+    "./comp1.js", // 组件，会通过判断基类
     "./comp2.js",
-    "./bpnode1.js",
+    "./bpnode1.js", // 蓝图节，会通过判断基类
     "./bpnode2.js",
-    "./test.js"
+    "./test.js" // 用户脚本文件
   ],
-  // 引用文件
+
+  // 引用其他TSF文件
   "files": [
     "./main.json",
     "./other.json"
   ],
+
   // 依赖
   "dependencies": {},
-  // 预下载的文件
+
+  // 预下载的文件，可能会预先收集要下载的文件
   "preDownloads": [
     "./models/x.json",
     "./models/y.json",
     "./models/z.json"
   ],
-  // 扩展
-  "extensions": {}
+
+  // 扩展，用户需要填写的扩展信息
+  "extensions": {
+    // 如编辑器用的信息
+    "editor": {}
+  }
 }
