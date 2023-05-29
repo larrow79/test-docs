@@ -49,9 +49,22 @@ class MyPlugin extends THING.BasePlugin {
 }
 ```
 
-## 开发插件
-可通过CLI创建一个插件：
-*待补充……*
+## 插件CLI
+可通过CLI创建一个插件工程：
+```bash
+> thing create my-plugin
+```
+然后选择 `Resource` 类型下的 `Plugin` 选项创建插件模版。
+
+切换目录并安装依赖后即可进入开发调试：
+```bash
+> cd my-plugin
+> npm i
+> npm run dev
+```
+在`src`目录下编写插件代码，开发调试过程中会自动将`src`目录的代码编译打包到`dist`目录下，`dist`目录中的插件即可通过`ThingJS API`正常加载。
+> 注：`src`下可以创建多个插件目录，对应`dist`目录也会编译成多份插件资源。
+
 
 ## 加载插件
 引擎通过`app.loadPlugin()`方法来加载插件：
@@ -67,12 +80,11 @@ plugin.sayHello();
 ## 导出成员
 为了导出插件中的属性或方法，参考`jsdoc`中`@`关键字的写法，通过脚手架打包编译，导出插件属性。
 
-* `@public` 表示是否暴露该属性或者方法
-* `@widgetType {type}` 属性类型，type 值对应在 `property-panel` 上的类型
-* `@widgetAlias` 别名，例如：“移动”就是“move”的别名，也可充当翻译功能
-* `@widgetParam {type}` `[xx=xx]property-panel`控件的配置项说明，例如：滑动条方法只需写`@public`即可
-* `jsdoc`中的类型也是可以复用，比如`@description`等
-
+* `@typedef {object} widget`，`typedef`代表自定义类型，`widget`是固定写法
+* `@property {type} [xx=xx]`，可参考`@thing.js/property-panel`控件的配置项说明
+* 方法只需写`@public`即可
+* `jsdoc`中的类型也是可以复用，比如`@description、@type、@alias`等
+* 
 举例：
 ```javascript
 class Navigation extends THING.BasePlugin {
@@ -81,12 +93,13 @@ class Navigation extends THING.BasePlugin {
     super()
         
     /**
-     * @public
-     * @widgetAlias 速度
-     * @widgetType {slider}
-     * @widgetParam {number} [min=0]
-     * @widgetParam {number} [max=5]
-     * @widgetParam {number} [step=0.1]
+     * @type {number}
+     * @typedef {object} widget
+     * @property {string} [name=速度]
+     * @property {string} [type=slider]
+     * @property {number} [min=0]
+     * @property {number} [max=25]
+     * @property {number} [step=1]
      */
     this.speed = 0.1
 
@@ -115,7 +128,7 @@ class Navigation extends THING.BasePlugin {
   }
 }
 ```
-这样的话，属性speed和方法move就被暴露出去，暴露出去的数据可以通过插件的实例上的`plugin.props`获取到。 // ？props的统一
+这样的话，属性speed和方法move就被暴露出去，暴露出去的数据可以通过插件的实例上的`plugin.props`获取到。
 
 ## 导出类
 很多时候我们的业务需要自定义一些类（例如机柜类、车类、人类等），然后将这些类交给各个应用自己去实例。

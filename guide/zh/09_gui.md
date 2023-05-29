@@ -67,7 +67,7 @@ let label = new THING.Label({
 });
 ```
 
-## 顶牌
+## 页面元素
 可以直接给对象增加一个`CSS2DComponent`组件，通过 DOM 元素来设置一个头顶牌：
 ```javascript
 let box = new THING.Box(2,2,2);
@@ -84,7 +84,7 @@ box.sign.pivot = [0.5, -0.5];
 box.sign.renderType = THING.RenderType.Plane;
 ```
 
-## 页面
+## 页面视图
 下面代码可创建一个内嵌页面的三维对象：
 ```javascript
 // 内嵌页面

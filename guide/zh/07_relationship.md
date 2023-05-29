@@ -20,8 +20,6 @@ let rls2 = new THING.Relationship({
     name: "control02",
     source: obj1,
     target: [obj2, obj3]
-    tags: ["xxx"],
-    userData: {}
     // queryDirection: THING.RelationshipDirection.Out // 默认Out
 });
 

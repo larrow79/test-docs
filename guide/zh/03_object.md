@@ -24,7 +24,8 @@ obj.uuid = "5811f0ecf97811ed9a4fc0b5d78a0456";
 
 对象类型存储在`type`属性中，内部类型如`Entity`、`Object3D`，或扩展类型如`Building`、`Room`，或自定义类型`Cabinet`等。
 ```javascript
-console.log( obj.type );
+let type = obj.type;
+console.log( type );
 ```
 
 对象标签`tags`，可以存储多个字符串作为对象的标签，可以根据标签来查询：
@@ -45,9 +46,9 @@ let dat = obj.userData["品牌"];
 
 ## 创建物体
 
-**物体** 或叫实体`Entity`，是一个具有可见外观的三维对象，比如：设备、车辆等。
+对象的基类`BaseObject`类型不能直接创建，一般使用其子类，如：Entity。
 
-在创建`Entity`时，构造方法中可以直接传入一个`url`来进行初始化，`url`可以是一个`gltf`的模型文件，或一个预制件文件的路径。参数中可以设置位置、旋转等空间参数，还可以通过`onComplete`回调来等待加载完成：
+物体或叫实体`Entity`，是一个具有可见外观的三维对象，比如：设备、车辆等。在创建`Entity`时，构造方法中可以直接传入一个`url`来进行初始化，`url`可以是一个`gltf`的模型文件，或一个预制件文件的路径。参数中可以设置位置、旋转等空间参数，还可以通过`onComplete`回调来等待加载完成：
 
 ```javascript
 // 资源url，可以是一个gltf文件，或一个资源包的路径
@@ -76,7 +77,6 @@ console.log(obj.name);
 obj.waitForComplete().then(function() {
     console.log(obj.name);
 });
-
 ```
 
 示例：
@@ -122,6 +122,7 @@ space.showBounding(true);
 示例：
 <playground src="create_space3d.js"></playground>
 
+
 ## 父子对象
 对象可能具有父对象`obj.parent`或子对象`obj.children`，他们一般是由加载场景时自动创建的，也可以在运行时改变。
 
@@ -144,6 +145,13 @@ obj.brothers
 ```javascript
 obj.add(childObj);
 obj.remove(childObj);
+```
+
+可以通过`traverse`来遍历所有子对象：
+```javascript
+obj.traverse((child) => {
+    console.log(child);
+})
 ```
 
 父对象和子对象`parents`和`children`等都是选择集类型，当需要寻找单个对象时，可以使用`find`接口进行搜索，找到立即返回，比`query`接口更高效：
@@ -172,5 +180,6 @@ app.query('car01').destroy();
 ```
 
 ## 更多功能
+
 对象还有具有如：查询`query`，组件`components`，效果`style`，空间变换`position`，关系`relationships`，事件`events`等更多功能，请参考对象相关文档。
 

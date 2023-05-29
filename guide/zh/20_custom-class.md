@@ -27,6 +27,18 @@ THING.Utils.registerClass("MyCar", MyCar);
 app.load(url);
 ```
 
+注册类型后，也可以通过`app.create`方法创建类型：
+```javascript
+let line = app.create({
+    type: "MyCar", 
+    position: [0,0,0],
+    style: {
+        opacity: 0.5,
+        color: "0xFF0000"
+    }
+})
+```
+
 ## 应用举例
 
 用户可根据具体行业中业务的需要，自定义一批类型。比如常用的：园区、建筑、楼层类：

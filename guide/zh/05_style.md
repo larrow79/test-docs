@@ -11,6 +11,12 @@ obj.visible = value;
 // 如果cascade参数为true，则设置【自己】和【子对象】的显示隐藏状态，并修改visible值
 // 如果cascade参数为false，则仅设置【自己】的显示隐藏状态，并修改visible值，不影响【子对象】
 obj.setVisible(value, cascade=true);
+
+// setVisible接口支持回调，如下例子代码，隐藏除了名字为car01的其他对象
+obj.setVisible(false, (obj)=> {
+    if (obj.name == "car01")
+        return false;
+});
 ```
 
 对象的`inherit.visible`属性可以设置这个对象是否跟随父亲的显示隐藏状态：

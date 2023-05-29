@@ -147,7 +147,6 @@
   "blueprints": [
     {
       "name": "bp01",
-      "url": "./blueprints/bp01.json", // 如果有url说明是直接引用文件，则不需要nodes、connections等
       "nodes": [
         {
           "name": "Begin",

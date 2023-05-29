@@ -20,10 +20,10 @@ app.queryByType('Building');
 app.queryByTags('Building | BuildingElement');
 
 // 按标自定义属性查，userData中， 包含 '物体类型' 名称的对象
-app.queryByData('物体类型');
+app.queryByUserData('物体类型');
 
 // 按标自定义属性查，userData中， 包含 '物体类型' 名称，并且属性值为 '叉车' 的对象
-app.queryByData('物体类型', '叉车');
+app.queryByUserData('物体类型', '叉车');
 
 // 按照正则表达式查
 const exp = new RegExp("car");

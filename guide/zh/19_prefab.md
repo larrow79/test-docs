@@ -14,7 +14,20 @@ await obj.waitForComplete();
 obj.doSomeMethod();
 ```
 
-可通过CLI创建一个预制件包 
-*待补充……*
+可通过CLI创建一个预制件包：
+```bash
+> thing create my-prefab
+```
+然后选择 `Resource` 类型下的 `Prefab` 选项创建预制件模版。
+
+切换目录并安装依赖后即可进入开发调试
+```bash
+> cd my-prefab
+> npm i
+> npm run dev
+```
+在`src`目录下编写预制件代码，开发调试过程中会自动将`src`目录的代码编译打包到`dist`目录下，`dist`目录中的预制件即可通过`ThingJS API`正常加载。
+注：`src`下可以创建多个预制件目录，对应`dist`目录也会编译成多份预制件资源。
+
 
 
