@@ -15,7 +15,7 @@ ESModule 方式使用
 ```javascript
 <script type="module">
     import { App, Component } from 'https://cdn.uino.cn/thingjs-cli/thing.esm.js';
-const app = new App();
+    const app = new App();
 </script>
 ```
 

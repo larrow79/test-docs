@@ -68,7 +68,7 @@ let label = new THING.Label({
 ```
 
 ## 页面元素
-可以直接给对象增加一个`CSS2DComponent`组件，通过 DOM 元素来设置一个头顶牌：
+可以直接给对象增加一个`CSS2DComponent`组件，通过 DOM 元素来设置一个页面元素的头顶牌：
 ```javascript
 let box = new THING.Box(2,2,2);
 

@@ -41,8 +41,7 @@
 
 详细格式参考：[TSF-JSON](../../formats/TSF.jsonc)
 
-## 应用举例
-### 组合使用
+## 组合使用
 `ThingJS`在实际应用中，可以通过一个场景文件，引用多个文件的组合使用，例如：
 ```javascript
 // scene.json
@@ -70,7 +69,7 @@ console.log(asset.blueprints[0]);
 在加载这个`JSON`文件后，就可以获取到多个文件中的的对象、关系、渲染设置、和蓝图等，并立即生效。
 
 
-### 效果模板
+## 效果模板
 可以将效果相关的文件放到一起，组成一个效果模板包，如:
 
 ```javascript
@@ -96,7 +95,7 @@ let asset = await app.load("./themes/theme.json", {apply: false});
 asset.apply();
 ```
 
-### 预制件
+## 预制件
 预制件文件，一般是包含了对象字段，以及对组件脚本、蓝图脚本引用的文件，例如：
 ```javascript
 // spaceman.json
@@ -149,16 +148,21 @@ let obj = new THING.Entity({
 ```javascript
 // 导出器
 let exproter = new THING.SceneExproter();
+```
 
-// 添加要导出的对象
+添加需要导出对象、关系：
+```javascript
+// 对象
 exporter.addObjects(rootObject);
 exporter.addObjects(rootObject.children);
 
-// 添加要导出的关系
+// 关系
 let rls = app.queryRelationships(...)；
 exporter.addRelationships([rls]);
+```
 
-// 添加要导出的对象集合
+添加需要导出的对象集合：
+```javascript
 exporter.addSelections([{
     objects: rootObject.children,
     style: new THING.Style({
@@ -170,26 +174,20 @@ exporter.addSelections([{
         "color": "red"
     })
 }]);
+```
 
-// 添加要导出的渲染设置
+添加要导出的渲染设置：
+```javascript
 exporter.addRenderSettings(app.renderSettings);
+```
 
-// 添加要导出的蓝图
-exporter.addBluprints([{
-    name: "bp01",
-    url: "./bp01.json",
-}, {
-    name: "bp02",
-    url: "./bp02.json",
-}]);
+添加要导出的蓝图：
+```javascript
+exporter.addBluprints(blueprints);
+```
 
-// 添加要导出的文件
-exporter.addFiles([
-    "./scene01.json",
-    "./scene02.json"
-]);
-
-// 添加要导出的插件
+添加要导出的插件：
+```javascript
 exporter.addPlugins([{
     name: "plug01",
     url: "./plug01.js",
@@ -197,14 +195,26 @@ exporter.addPlugins([{
 },{
     url: "./plug02.js"
 }]);
+```
 
-// 添加要导出的文件
+添加要导出脚本，脚本可能是组件、蓝图节点或其他js文件：
+```javascript
 exporter.addScripts([
     "./script1.js",
     "./script2.js"
 ]);
+```
 
-// 导出
+添加要导出的其他文件：
+```javascript
+exporter.addFiles([
+    "./scene01.json",
+    "./scene02.json"
+]);
+```
+
+导出：
+```javascript
 let data = exporter.export();
 ```
 

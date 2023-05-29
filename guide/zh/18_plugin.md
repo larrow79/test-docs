@@ -49,6 +49,17 @@ class MyPlugin extends THING.BasePlugin {
 }
 ```
 
+可以通过`app.install()`来直接安装插件：
+```javascript
+// 安装插件
+app.install(new MyPlugin({ speed: 10 }), "myPlugin");
+// 已经安装的插件
+const plugin = app.plugins['myPlugin'];
+// 卸载插件
+app.uninstall("myPlugin");
+```
+> 注意：但是更常见的加载插件的方式，是直接通过`app.loadPlugin()`加载插件文件，详见下面的文档。
+
 ## 插件CLI
 可通过CLI创建一个插件工程：
 ```bash
@@ -62,7 +73,7 @@ class MyPlugin extends THING.BasePlugin {
 > npm i
 > npm run dev
 ```
-在`src`目录下编写插件代码，开发调试过程中会自动将`src`目录的代码编译打包到`dist`目录下，`dist`目录中的插件即可通过`ThingJS API`正常加载。
+在`src`目录下编写插件代码，开发调试过程中会自动将`src`目录的代码编译打包到`dist`目录下，`dist`目录中的插件即可通过`ThingJS`正常加载。
 > 注：`src`下可以创建多个插件目录，对应`dist`目录也会编译成多份插件资源。
 
 
