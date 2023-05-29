@@ -65,8 +65,3 @@ await bundle.waitForComplete();
 const graph = bundle.topo;
 console.log(graph.nodes);
 ```
-
-另外蓝图的加载，是靠对象身上的`load`方法：
-```javascript
-obj.blueprint.load({ url: './blueprints/myBP.json' });
-```
