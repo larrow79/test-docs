@@ -5,49 +5,44 @@
 使用`ThingJS`引擎，首先要创建一个`App`实例，`App`是引擎中的主要入口，提供了资源加载、对象管理、对象查询、事件注册等等各种功能，一般只需要创建一个：
 
 ```javascript
-// 创建APP
 const app = new THING.App();
 ```
 
-`ThingJS`使用页面上`id`为`div3d`的元素作为3d的默认渲染区域，`ThingJS`将会在这个`div`内创建`WebGL`以及一些需要的页面元素。如果需要手动指定标签，可以使用`container`参数：
+`ThingJS`使用页面上标签为`div3d`的元素，作为默认的渲染区域，`ThingJS`将会在这个`div`内创建`WebGL`以及一些需要的页面元素。下面是一个完整的页面例子：
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>ThingJS</title>
+        <meta charset="utf-8" />
+        <script src="./thing.js"></script>
+    </head>
+
+    <body style="margin: 0; padding: 0">
+        <div id="div3d"></div>
+    </body>
+    
+    <script type="module">
+        const app = new THING.App();
+    </script>
+</html>
+```
+> 注意：请在页面元素`div3d`初始化后，再创建`App`
+
+如果需要手动指定元素的标签，可以使用`container`参数：
 ```javascript
-// 创建APP，如果需要可以手动指定div
 const app = new THING.App({
     container: document.getElementById('div3d')
 });
 ```
-完整页面例子：
-```html
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>ThingJS</title>
-    <meta charset="utf-8">
-    <script src="./thing.js"></script>
-</head>
-
-<body>
-    <div id="div3d"></div>
-</body>
-
-<script type="module">
-    const app = new THING.App();
-</script>
-
-</html>
-```
-> 注意：在页面元素`div3d`初始化后，再调用`new App()`
-
 ## Hello World
 在初始化`App`时，可以传入一个`url`参数，`url`可以是一个包含了场景信息的 <a href="https://www.khronos.org/gltf/">gltf</a> 文件，或一个`ThingJS`<a href="">场景格式</a> 的`JSON`文件，这样就可以加载一个场景：
 ```javascript
-// 创建APP，场景url
 const app = new THING.App({
     url: "./scenes/uino.gltf"
     onComplete: function(ev) {
-        // 加载完成后回调
-        console.log(ev);
+        console.log(ev); // 加载完成后回调
     }
 });
 ```
@@ -67,6 +62,6 @@ app.on('update', function(deltaTime) {
 示例：
 <playground src="sample_box.js"></playground>
 
-关于`App`的更多功能请参考API手册。
+关于`App`的更多功能请参考后续文档和API手册。
 
 
