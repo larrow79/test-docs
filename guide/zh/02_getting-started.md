@@ -40,7 +40,7 @@ const app = new THING.App({
 在初始化`App`时，可以传入一个`url`参数，`url`可以是一个包含了场景信息的 <a href="https://www.khronos.org/gltf/">gltf</a> 文件，或一个`ThingJS`<a href="">场景格式</a> 的`JSON`文件，这样就可以加载一个场景：
 ```javascript
 const app = new THING.App({
-    url: "./scenes/uino.gltf"
+    url: "./assets/scene/scene.gltf",
     onComplete: function(ev) {
         console.log(ev); // 加载完成后回调
     }

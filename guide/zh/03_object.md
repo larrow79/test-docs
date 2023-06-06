@@ -19,7 +19,7 @@ obj.name = "car01";
 // 编号
 obj.id = "001";
 // 唯一标识
-obj.uuid = "5811f0ecf97811ed9a4fc0b5d78a0456";
+console.log(obj.uuid); // "5811f0ecf97811ed9a4fc0b5d78a0456";
 ```
 
 对象类型存储在`type`属性中，内部类型如`Entity`、`Object3D`，或扩展类型如`Building`、`Room`，或自定义类型`Cabinet`等。

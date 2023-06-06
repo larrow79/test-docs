@@ -4,7 +4,7 @@
   "id": "001",
   "version": "2.0",
   "author": "uino",
-  "description": "ThingJS Scene Format (TSF)",
+  "description": "TSF",
 
   // 标签
   "tags": [
@@ -54,7 +54,11 @@
         "owner": "uino"
       },
       "extras": {
-        "speed": 100
+        "speed": 100,
+        "camInfo": {
+          "position": [],
+          "target": []
+        }
       },
       "parent": {
         "uuid": "9c0e84e81dd84fb3b8ddb3d3fe83b97f"
