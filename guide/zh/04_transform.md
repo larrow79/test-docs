@@ -90,8 +90,8 @@ obj.scaleTo([2, 2, 2], {
 });
 ```
 
-示例：
-<playground src="object_transform.js"></playground>
+<!-- 示例：
+<playground src="object_transform.js"></playground> -->
 
 ## 坐标转换
 对象的世界坐标和相对坐标的转换：

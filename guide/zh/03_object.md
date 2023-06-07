@@ -1,13 +1,13 @@
 # 对象基础
 <!-- object -->
-在`ThingJS`中，对象`Object`是引擎提供的基本控制单元。对象具有唯一标识的，能被单独创建、销毁、查询，具有属性、方法、事件，能与其他对象建立关系。
+在`ThingJS`中，对象`Object`是引擎提供的基本控制单元。对象具有唯一标识，能被单独创建、销毁、查询，具有属性、方法、事件，能与其他对象建立关系。
 
 对象的基类是`BaseObject`，可以通过 **继承** 或 **组合** 的方式对其进行扩展，如：
 * 三维对象类`Object3D`提供了空间变换和渲染功能；
 * 物体类`Entity`是最常用的类型，提供了模型或预制件的功能；
 * 三维空间类`Space3D`提供了空间计算功能；
 
-你可以继承这些类型，来进行扩展。你也可以通过`Compnent`，给对象增加组件，进行扩展。
+你可以继承这些类型，来进行扩展。你也可以通过`Component`，给对象增加组件，进行扩展。
 
 在`ThingJS`，真实世界中的 **物体** 在虚拟场景中所对应的 **对象** 就是 **孪生体** ，孪生体在技术实现上就是`BaseObject`的子类。一般认为对象的`id`和真实世界中的孪生体的`id`一致时，就认为这个对象是一个孪生体。
 
@@ -79,8 +79,8 @@ obj.waitForComplete().then(function() {
 });
 ```
 
-示例：
-<playground src="create_entity.js"></playground>
+<!-- 示例：
+<playground src="create_entity.js"></playground> -->
 
 ## 创建空间
 
@@ -119,8 +119,8 @@ space.disjoint(obj, cascade = true);
 space.showBounding(true);
 ```
 
-示例：
-<playground src="create_space3d.js"></playground>
+<!-- 示例：
+<playground src="create_space3d.js"></playground> -->
 
 
 ## 父子对象

@@ -36,7 +36,7 @@ Import maps 方式使用
 
 安装依赖：
 ```bash
-> npm install '@thing.js/core' --save	
+> npm install @thing.js/core --save	
 ```
 
 引入全部模块：
@@ -53,7 +53,7 @@ import { App, Component } from '@thing.js/core';
 
 全局安装
 ```bash
-> npm install '@thing.js/cli' -g
+> npm install @thing.js/cli -g
 ```
 
 使用`thing create`创建项目，提供常用的 `Simple`、`Vue`、`React` 等模板。

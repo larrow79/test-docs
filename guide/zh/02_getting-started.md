@@ -59,8 +59,8 @@ app.on('update', function(deltaTime) {
 });
 ```
 
-示例：
-<playground src="sample_box.js"></playground>
+<!-- 示例：
+<playground src="sample_box.js"></playground> -->
 
 关于`App`的更多功能请参考后续文档和API手册。
 
