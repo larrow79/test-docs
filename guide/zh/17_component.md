@@ -77,7 +77,7 @@ let comp = obj.components['rotator'];
 ```
 
 ## 禁用删除
-可以通过组件的`enable`属性可以禁用或启用组件，当组件被禁用后，会调用组件的`onDisable`，同时`onUpdate` 也不会再被调用，当启用组件后，会调用组件的`onEnable`方法。
+通过组件的`enable`属性可以禁用或启用组件，当组件被禁用后，会调用组件的`onDisable`，同时`onUpdate` 也不会再被调用，当启用组件后，会调用组件的`onEnable`方法。
 ```javascript
 obj.rotator.enable = false; // 禁用组件，调onDisable
 obj.rotator.enable = true;  // 启用组件，调onEnable
@@ -88,7 +88,7 @@ obj.removeComponent('rotator');
 ```
 
 ## 常用成员
-组件中的常用成员，如`this.app`、`this.camera`等，其中 `this.object 为组件所挂接的物体：
+组件中的常用成员，如`this.app`、`this.camera`等，其中 `this.object` 为组件所挂接的物体：
 ```javascript
 class MyComp extends THING.Component {
     onStart() {

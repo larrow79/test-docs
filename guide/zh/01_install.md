@@ -34,7 +34,7 @@ Import maps 方式使用
 
 ## 通过 NPM 安装
 
-安装依赖：
+在当前工程下，安装依赖：
 ```bash
 > npm install @thing.js/core --save	
 ```
@@ -62,4 +62,5 @@ import { App, Component } from '@thing.js/core';
 ```
 ![CLI使用示例](./images/cli.gif)
 
+> 注意，上面的安装中，如果在`Windows PowerShell`下，需要增加引号：`'@thing.js/cli'`
 

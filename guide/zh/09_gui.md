@@ -68,16 +68,16 @@ let label = new THING.Label({
 ```
 
 ## 页面元素
-可以直接给对象增加一个`CSS2DComponent`组件，通过 DOM 元素来设置一个页面元素的头顶牌：
+可以直接给对象增加一个`CSS2DComponent`组件，通过 DOM 元素来设置一个页面元素的头顶牌效果：
 ```javascript
 let box = new THING.Box(2,2,2);
 
-// 2D顶牌
+// 2D页面元素
 box.addComponent(THING.DOM.CSS2DComponent, 'sign');
 box.sign.domElement = document.getElementById('board');
 box.sign.offset = [0, 3, 0];
 
-// 3D顶牌
+// 3D页面元素
 box.addComponent(THING.DOM.CSS3DComponent, 'sign');
 box.sign.domElement = document.getElementById('board');
 box.sign.pivot = [0.5, -0.5];

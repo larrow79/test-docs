@@ -46,7 +46,7 @@ app.envMap = cubeMap;
 obj.style.envMap = cubeMap;
 ```
 
-直接设置`app.envMap`为`null`即可清空空环境图：
+直接设置`app.envMap`为`null`即可清空环境图：
 ```javascript
 app.envMap = null;
 obj.style.envMap = null;
@@ -80,7 +80,7 @@ mainLight.castShadow = true;
 mainLight.shadowQuality = THING.ShadowQualityType.High;
 ```
 
-可以创建更多光源，目前支持`AmbientLight`，`DirectionalLight`，`HemisphereLight`，`SpotLight`等集中灯光
+可以创建更多光源，目前支持`AmbientLight`，`DirectionalLight`，`HemisphereLight`，`SpotLight`等几种灯光
 ```javascript
 // 创建聚光灯
 const spotLight = new THING.SpotLight();

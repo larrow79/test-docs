@@ -37,7 +37,7 @@
   "extensions": {}
 }
 ```
-一个场景文件可以存储上述的全部字段内容，也可以只存储其中的部分字段。只存储部分字段的文件，一般用于描述某类数据，比如：只存储效果相关的字段，当加载这个文件仅用于生效某个效果。
+一个场景文件可以存储上述的全部字段内容，也可以只存储其中的部分字段。只存储部分字段的文件，一般用于描述某类数据，比如：当只希望应用某个效果时，只需要存储效果相关的字段。
 
 详细格式参考：[文件格式](../../formats/TSF.jsonc)
 
@@ -66,7 +66,7 @@ console.log(asset.root);
 // 加载到的蓝图
 console.log(asset.blueprints[0]);
 ```
-在加载这个`JSON`文件后，就可以获取到多个文件中的的对象、关系、渲染设置、和蓝图等，并立即生效。
+在加载这个`JSON`文件后，就可以获取到多个文件中的对象、关系、渲染设置、和蓝图等，并立即生效。
 
 
 ## 效果模板
@@ -85,7 +85,7 @@ console.log(asset.blueprints[0]);
 }
 ```
 
-> 注意，效果模板包，通常会用于不同风格的切换，所以一般不希望立即被应用到场景中，只有当需要时候才应用，以达到切换到效果的目的，需要传入`apply`参数为`false`。
+> 注意，效果模板包，通常会用于不同风格的切换，所以一般不希望立即被应用到场景中，只有当需要时候才应用，以达到切换效果的目的，需要传入`apply`参数为`false`。
 
 ```javascript
 // 加载，但不立即生效
@@ -143,11 +143,11 @@ let obj = new THING.Entity({
 ```
 
 ## 导出
-导出文件，需要通过构建一个`SceneExproter`的导出器，将需要导出的内容，添加到导出器中，然后导出。
+导出文件，需要通过构建一个`SceneExporter`的导出器，将需要导出的内容，添加到导出器中，然后导出。
 
 ```javascript
 // 导出器
-let exproter = new THING.SceneExproter();
+let exporter = new THING.SceneExporter();
 ```
 
 添加需要导出对象、关系：
@@ -183,7 +183,7 @@ exporter.addRenderSettings(app.renderSettings);
 
 添加要导出的蓝图：
 ```javascript
-exporter.addBluprints(blueprints);
+exporter.addBlueprints(blueprints);
 ```
 
 添加要导出的插件：
@@ -197,7 +197,7 @@ exporter.addPlugins([{
 }]);
 ```
 
-添加要导出脚本，脚本可能是组件、蓝图节点或其他js文件：
+添加要导出的脚本，脚本可能是组件、蓝图节点或其他js文件：
 ```javascript
 exporter.addScripts([
     "./script1.js",

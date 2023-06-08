@@ -4,7 +4,7 @@
 在`ThingJS`引擎中，默认提供了摄影机对象`app.camera`，以及它的默认控制方式。摄影机就相当于手机上的摄像头，随着摄影机的位置`position`、拍摄点`target`的变化，对场景进行取景，之后渲染到屏幕上。摄影机提供了设置视角、飞行、模式，以及控制方式等多种功能。
 
 ## 视角
-通过摄影机的`position`、`target`属性，或这`lookat`方法来设置摄影机看点和角度：
+通过摄影机的`position`、`target`属性，或这`lookAt`方法来设置摄影机看点和角度：
 ```javascript
 // 设置摄像机位置
 app.camera.position = [0, 20, 20];
@@ -12,8 +12,8 @@ app.camera.position = [0, 20, 20];
 // 设置摄像机看点
 app.camera.target = [-30, 10, 0];
 
-// 或通过lookat设置看点
-// app.camera.lookat([-30, 10, 0]);
+// 或通过lookAt设置看点
+app.camera.lookAt([-30, 10, 0]);
 ```
 
 摄影机提供的`fit`方法，可以根据对象的大小，自动计算一个最佳看点，并设置到这个看点上：
@@ -36,7 +36,7 @@ app.camera.flyTo({
 
 ## 模式
 摄影机支持透视模式`Perspective`和正交模式`Orthographic`，默认使用透视模式。
-* 在透视模式下，物体随摄影机的距离近大远小，更接近真是世界；
+* 在透视模式下，物体随摄影机的距离近大远小，更接近真实世界；
 * 在正交模式下，物体的大小和摄影机距离无关，其大小保持不变；
 
 可通过摄影机的`setProjectionType`来设置两种模式，枚举`ProjectionType`包含两种模式，`duration`参数可以控制切换模式的过渡时间：

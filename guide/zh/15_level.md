@@ -58,7 +58,7 @@ app.level.prev;
 
 ## 层级控制
 
-在切换到某个层级之后，需要实现一个层级的控制方式，用来展示和控制这个层级的对象。你可以通过继承`BaseLevelControl`类，来实现这个控制方式，并注通过`app.level.register()`对其进行注册：
+在切换到某个层级之后，需要实现一个层级的控制方式，用来展示和控制这个层级的对象。你可以通过继承`BaseLevelControl`类，来实现这个控制方式，并通过`app.level.register()`对其进行注册：
 
 ```javascript
 // 建筑层级控制
@@ -88,7 +88,7 @@ app.level.register(".Building", new BuildingControl({selectColor: "#FF00FF"}));
 层级控制的例子，可以参考例子代码`campus.js`中的层级控制方式。
 
 ## 层级事件
-除了自定义层级的控制方式，引擎还支注册层级进入和退出的事件，从而可以在层级进入或退出时，进行一些操作：
+除了自定义层级的控制方式，引擎还支持注册层级进入和退出的事件，从而可以在层级进入或退出时，进行一些操作：
 ```javascript
 app.on(THING.EventType.EnterLevel, '.Building', (e)=>{}, 'levelTag');
 app.on(THING.EventType.LeaveLevel, '.Building', (e)=>{}, 'levelTag');

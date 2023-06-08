@@ -18,7 +18,7 @@ class MyCar extends Entity {
 let car = new MyCar(100);
 ```
 
-如果在 **场景文件** 中包含了自定义类型`MyCar`，则需要你需要在场景加载前，对这个类进行注册，这样在读取场景文件时，会自动进行实例化：
+如果在 **场景文件** 中包含了自定义类型`MyCar`，则需要你在场景加载前，对这个类进行注册，这样在读取场景文件时，会自动进行实例化：
 ```javascript
 // 注册自定义类型
 THING.Utils.registerClass("MyCar", MyCar);
@@ -95,6 +95,6 @@ app.level.register(".Floor", new FloorControl());
 
 这样，即形成了一个简单的行业扩展类库，在项目中可直接引用这个库文件，或作为插件的方式加载。当切换到相应对象的层级后，就可以实现对这些对象的控制方式。
 
-可参考：campus.js
+可参考：<a href="../../scripts/simple_campus.js">simple_campus.js</a>
 
 

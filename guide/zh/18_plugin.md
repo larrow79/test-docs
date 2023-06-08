@@ -95,7 +95,7 @@ plugin.sayHello();
 * `@property {type} [xx=xx]`，可参考`@thing.js/property-panel`控件的配置项说明
 * 方法只需写`@public`即可
 * `jsdoc`中的类型也是可以复用，比如`@description、@type、@alias`等
-* 
+  
 举例：
 ```javascript
 class Navigation extends THING.BasePlugin {
