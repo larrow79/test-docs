@@ -6,7 +6,7 @@
 全局引入使用
 ```javascript
 <script src="https://cdn.uino.cn/thingjs-cli/thing.js"></script>
-<script>
+<script type="module">
     const app = new THING.App();
 </script>
 ```

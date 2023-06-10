@@ -13,7 +13,7 @@ obj.position = [0, 10, 0];
 obj.rotate(45); // 沿默认轴旋转45度
 obj.rotateOnAxis([0, 0, 1], 45); // 沿给定轴旋转45度
 obj.rotateY(45); // 沿Y轴旋转
-obj.angles = [45, 0, 0];
+obj.rotation = [45, 0, 0];
 
 // 设置缩放
 obj.scale = [1, 2, 1]; // 沿y轴缩放2倍
@@ -45,7 +45,7 @@ obj.moveTo([10, 0, 0], {
 或`movePath`方法，让对象沿指定的路径移动，路径是一个三维点数组：
 ```javascript
 obj.movePath({
-    path: [[10, 0, 0], [10, 0, 10]，[0, 0, 0]],
+    path: [[10, 0, 0], [10, 0, 10], [0, 0, 0]],
     loopType: THING.LoopType.PingPong,
     duration: 2000,
     loop: true, // 路径点按照首尾相接闭环移动
@@ -59,7 +59,7 @@ obj.movePath({
 可以通过`rotateTo`方法，让对象旋转到一个指定角度，可以用于动画效果：
 ```javascript
 // 旋转到某个角度
-obj.rotateTo([0, 90, 0];
+obj.rotateTo([0, 90, 0]);
 
 // 旋转到某个角度，如果需要完成时可回调
 obj.rotateTo([0, 90, 0], {

@@ -61,7 +61,7 @@ let box = new THING.Box(2,2,2);
 let label = new THING.Label({
     parent: box,
     localPosition: [0, box.boundingBox.size[1], 0],
-    fontText: 'Box' + '_' + i,
+    fontText: 'Box_01',
     fontSize: 26,
     fontColor: "#FF0000"
 });
@@ -92,7 +92,7 @@ var webView = new THING.WebView({
     position: [0, 2, 0],
     renderType: THING.RenderType.Plane,
     url: 'https://www.thingjs.com',
-    scale: [2, 2, 1]
+    scale: [2, 2, 1],
     domWidth: 1920,
     domHeight: 1080,
 });

@@ -29,10 +29,10 @@ app.actionManager.run({
         "waitForComplete": true
     }, {
         "type": "ObjectSetColor", // 设置物体颜色
-        "target": "obj01"		// 物体名称
+        "target": "obj01",		// 物体名称
         "params": {
             "color": "#FF0000" // 颜色值
-        }
+        },
         "delay": 2000	// 等待2秒后执行这个
     }]
 });

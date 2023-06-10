@@ -68,7 +68,7 @@ const ambientLight = app.scene.ambientLight;
 const mainLight = app.scene.mainLight;
 ```
 
-可以通过灯光的颜色`color`属性、强度`instensity`属性、阴影`castShadow`属性等对灯光进行调整：
+可以通过灯光的颜色`color`属性、强度`intensity`属性、阴影`castShadow`属性等对灯光进行调整：
 ```javascript
 // 修改默认灯光的参数
 ambientLight.color = [0.8, 0.8, 1.0];

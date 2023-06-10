@@ -36,8 +36,8 @@ obj.tags = ["Vehicle", "Truck"];
 对象的用户数据，可以通过`userData`存储自定义数据：
 ```javascript
 obj.userData = {
-    "品牌": "UINO"，
-    "编号": "M001"
+    "品牌": "UINO",
+    "编号": "M001",
     "重量": 100,
 }
 
@@ -48,7 +48,7 @@ let dat = obj.userData["品牌"];
 
 对象的基类`BaseObject`类型不能直接创建，一般使用其子类，如：Entity。
 
-物体或叫实体`Entity`，是一个具有可见外观的三维对象，比如：设备、车辆等。在创建`Entity`时，构造方法中可以直接传入一个`url`来进行初始化，`url`可以是一个`gltf`的模型文件，或一个预制件文件的路径。参数中可以设置位置、旋转等空间参数，还可以通过`onComplete`回调来等待加载完成：
+物体或叫实体`Entity`，是一个具有可见外观的三维对象，比如：设备、车辆等。在创建`Entity`时，构造方法中可以直接传入一个`url`来进行初始化，`url`可以是一个`gltf`的模型文件，或一个预制件文件的路径。参数中可以设置位置、旋转等空间参数，    还可以通过`onComplete`回调来等待加载完成：
 
 ```javascript
 // 资源url，可以是一个gltf文件，或一个资源包的路径
@@ -58,7 +58,7 @@ const url = "./models/car.gltf";
 let obj = new THING.Entity({
     url,
     position: [2, 0, 0],
-    angles: [0, 45, 0],
+    rotation: [0, 45, 0],
     onComplete: function() {
         // 加载资源完成的回调
         console.log("object created");

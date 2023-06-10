@@ -44,7 +44,7 @@ let blueprint = asset.blueprints[0];
 blueprint.setVar('power', 100);
 
 // 触发蓝图中的事件
-blueprint.triggerEvent('click', {...})；
+blueprint.triggerEvent('click', {...});
 ```
 
 ## 开发节点

@@ -143,7 +143,7 @@ let obj = new THING.Entity({
 ```
 
 ## 导出
-导出文件，需要通过构建一个`SceneExporter`的导出器，将需要导出的内容，添加到导出器中，然后导出。
+导出文件，需要通过构建一个`SceneExporter`的导出器，将需要导出的内容添加到导出器中，然后导出。
 
 ```javascript
 // 导出器
@@ -157,7 +157,7 @@ exporter.addObjects(rootObject);
 exporter.addObjects(rootObject.children);
 
 // 关系
-let rls = app.queryRelationships(...)；
+let rls = app.queryRelationships(...);
 exporter.addRelationships([rls]);
 ```
 
