@@ -82,7 +82,7 @@ camera.fov = 45;
 // 增加一个摄影机
 var cam01 = new THING.Camera();
 cam01.enableViewport = true;
-cam01.viewport = [0, 15, 128, 128];	// top, left, width, height\
+cam01.viewport = [0, 15, 128, 128];	// left, top, width, height
 
 // 再增加一个摄影机
 var cam02 = new THING.Camera();

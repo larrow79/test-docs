@@ -18,43 +18,37 @@ points.style.color = "#FF0000";
 
 ## 线
 线的类型分为像素线`PixelLine`，粗线`FatLine`，管线`PolygonLine`、导航线`RouteLine`等，传入坐标，自动生成线和拐角。
-
-创建像素线：
 ```javascript
 const points = [[10, 0, 0], [10, 0, 10], [0, 0, 10], [0, 0, 0]];
 
+// 创建像素线
 let pixelLine = new THING.PixelLine({
-    points,
+    selfPoints: points,
     closure: true // 以闭环方式创建
 });
-```
 
-创建粗线：
-```javascript
+// 创建粗线
 let fatLine = new THING.FatLine({
-    points,
+    selfPoints: points,
     width: 5,
     position: [0, 3, 0]
 });
-```
 
-创建管线：
-```javascript
+// 创建管线
 let polygonLine = new THING.PolygonLine({
-    points,
+    selfPoints: points,
     position: [0, 6, 0],
     closure: true
 });
-```
 
-创建导航线：
-```javascript
+// 创建导航线
 let routeLine = new THING.RouteLine({
-    points,
+    selfPoints: points,
     position: [0, 9, 0],
     closure: true
 });
 ```
+
 
 ## 面
 面的类型分为简单的矩形平面`Plane`和平面区域`PlaneRegion`，可以在`PlaneRegion`上指定一个镂空的区域进行挖洞。

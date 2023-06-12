@@ -7,7 +7,7 @@
 
 全局查询是对场景中所有对象的范围内进行查询，`app.query`接口提供了多种接口查询对象的方式：
 ```javascript
-// 按名子查，查询名字为 car01 的对象
+// 按名字查，查询名字为 car01 的对象
 app.queryByName('car01');
 
 // 按id查，查询id为 100 的对象
@@ -92,7 +92,7 @@ objs.forEach(function(obj) {
 });
 ```
 
-选择器注册时间，常用操作
+对选择器中的所有对象，进行批量操作：
 ```javascript
 app.query('car01').on('click', function(e) {
     console.log(e.object);

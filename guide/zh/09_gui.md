@@ -92,7 +92,7 @@ var webView = new THING.WebView({
     position: [0, 2, 0],
     renderType: THING.RenderType.Plane,
     url: 'https://www.thingjs.com',
-    scale: [2, 2, 1],
+    scale: [19.20, 10.8, 1],
     domWidth: 1920,
     domHeight: 1080,
 });
