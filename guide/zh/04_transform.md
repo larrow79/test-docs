@@ -1,5 +1,4 @@
 # 空间属性
-<!-- transform -->
 
 三维对象`Object3D`的子类都会提供位置、旋转、缩放等空间属性，你可以通过设置一个值，或设置一个变化过程，来改变对象的空间属性。
 
@@ -89,9 +88,6 @@ obj.scaleTo([2, 2, 2], {
     duration: 2000
 });
 ```
-
-<!-- 示例：
-<playground src="object_transform.js"></playground> -->
 
 ## 坐标转换
 对象的世界坐标和相对坐标的转换：

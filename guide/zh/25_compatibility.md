@@ -1,5 +1,4 @@
 # 兼容
-<!-- compatibility -->
 
 ## Bundle加载
 

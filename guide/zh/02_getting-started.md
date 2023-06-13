@@ -1,5 +1,4 @@
 # 入门
-<!-- getting-started -->
 
 ## 初始化
 使用`ThingJS`引擎，首先要创建一个`App`实例，`App`是引擎中的主要入口，提供了资源加载、对象管理、对象查询、事件注册等等各种功能，一般只需要创建一个：
@@ -58,9 +57,6 @@ app.on('update', function(deltaTime) {
         box.rotateY(0.1);
 });
 ```
-
-<!-- 示例：
-<playground src="sample_box.js"></playground> -->
 
 关于`App`的更多功能请参考后续文档和API手册。
 

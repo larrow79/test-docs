@@ -1,5 +1,4 @@
 # 参数化
-<!-- parametric -->
 
 参数化对象，是根据输入参数自动构建的三维对象，如：点、线、面、体等。
 
@@ -69,7 +68,6 @@ const plane2 = new THING.PlaneRegion({
 ```
 
 ## 几何体
-<!-- geometry -->
 
 可以创建如：立方体、球体、圆柱体、胶囊等几等何体：
 ```javascript
@@ -134,6 +132,9 @@ emitter.setAttribute('ParticleCount', 200);
 
 ```javascript
 // 通过json创建粒子
-let particleSystem = new THING.ParticleSystem(json);
+let particleSystem = new THING.ParticleSystem({
+    name: "par01",
+    url: "./particles"
+});
 ```
 

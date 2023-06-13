@@ -1,13 +1,12 @@
 # 动作
-<!-- action -->
 
 动作`Action`是对一个执行操作的封装，通过`BaseAction`的子类来实现。多个动作可以组合调用，有些动作是异步的，需要等待完成，动作也可以进行延时执行。
 
 ## 执行动作
 通过`actionManager`的`run`方法，可以执行一段动作JSON数据，下面例子是一个包含多个动作的队列：
 ```javascript
-app.actionManager.run({
-    "actions": [{
+app.actionManager.run([
+    {
         "type": "CameraFlyto", // 摄影机飞行
         "params": {
             "duration": 2000		// 飞行时间2秒
@@ -34,8 +33,8 @@ app.actionManager.run({
             "color": "#FF0000" // 颜色值
         },
         "delay": 2000	// 等待2秒后执行这个
-    }]
-});
+    }
+]);
 ```
 
 ## 自定义动作

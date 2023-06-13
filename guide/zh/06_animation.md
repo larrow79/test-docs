@@ -1,5 +1,4 @@
 # 对象动画
-<!-- animation -->
 
 如果`Entity`的资源中包含动画，可以用`playAnimation`方法来播放动画：
 ```javascript

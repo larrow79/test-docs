@@ -1,5 +1,4 @@
 # 自定义类
-<!-- custom-class -->
 
 你可以通过继承`ThingJS`提供的很多类型，如：`Entity`、`Object3D`、`Component`等等，来实现自己的扩展。
 
