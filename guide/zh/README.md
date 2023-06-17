@@ -1324,7 +1324,7 @@ app.actionManager.run([
 ## 自定义动作
 可以通过继承`BaseAction`类型，来实现一个自定义动作：
 ```javascript
-class MyAction extend BaseAction {
+class MyAction extends BaseAction {
     onRun() {}
     onStop() {}
     onEnable(value) {}
@@ -1544,7 +1544,7 @@ app.background = baseURL;
 
 直接设置`app.background`为`null`即可清空背景：
 ```javascript
-app.background = null;
+app.background = "#808080";
 ```
 
 ## 环境图
@@ -1978,7 +1978,7 @@ obj.doSomeMethod();
 ## 定义类型
 ```javascript
 // 自定义类型
-class MyCar extends Entity {
+class MyCar extends THING.Entity {
     constructor(param) {
         this.speed = param;
         console.log("MyCar create!");
